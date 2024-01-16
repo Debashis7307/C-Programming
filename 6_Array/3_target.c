@@ -11,14 +11,15 @@ int main(){
     printf("\nEnter the tergat elements :\n");
     scanf("%d",&b);
     int i=0,j=a-1;
-    while(arr[i]+arr[j]==b){
+    while(i<j){
         if(arr[i]+arr[j]==b){
             printf("\nThe sum of %d and %d is %d\n", arr[i], arr[j],b);
+            break;
         }
-        if(arr[i]+arr[j]>b){
+        else if(arr[i]+arr[j]>b){
             j--;
         }
-        if(arr[i]+arr[j]<b){
+        else{
             i++;
         }
     }
