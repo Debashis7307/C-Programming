@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdbool.h>
+#include<limits.h>
 
 int main(){
     int a;
@@ -17,20 +18,20 @@ int main(){
         scanf("%d",&arr[i]);
     }
 
-    // Bubble sort
+    // Selection sort
 
-    for(int i=0;i<a;i++){
-        bool check = true;
-        for(int j=0;j<a-1-i;j++){
-            if(arr[j]>arr[j+1]){
-                int tem = arr[j];
-                arr[j]= arr[j+1];
-                arr[j+1]= tem;
-                check = false;
+    for(int i=0;i<a-1;i++){
+        int min = INT_MAX;
+        int min_index = -1;
+        for(int j=i;j<=a-1;j++){
+            if(min>arr[j]){
+                min = arr[j];
+                min_index = j;
             }
+            int tem = arr[i];
+                arr[i]= min;
+                min= tem;
         }
-        if(check==true){
-            break;
         }
     }
 
