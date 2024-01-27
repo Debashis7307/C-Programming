@@ -1,6 +1,7 @@
-#include<stdio.h>
+
 #include<stdbool.h>
 #include<limits.h>
+#include<stdio.h>
 
 int main(){
     int a;
@@ -28,16 +29,15 @@ int main(){
                 min = arr[j];
                 min_index = j;
             }
-            int tem = arr[i];
-                arr[i]= min;
-                min= tem;
         }
+            int tem = arr[min_index];
+                arr[min_index]= arr[i];
+                arr[i]= tem;
         }
-    }
 
     //print the output
 
-    printf("\nNow the sorted list is: \n");
+     printf("\nNow the sorted list is: \n");
     for(int i=0;i<a;i++){
         printf("%d ",arr[i]);
     }
