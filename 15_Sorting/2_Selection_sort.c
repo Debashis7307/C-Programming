@@ -33,7 +33,7 @@ int main(){
             int tem = arr[min_index];
                 arr[min_index]= arr[i];
                 arr[i]= tem;
-        }
+    }
 
     //print the output
 
